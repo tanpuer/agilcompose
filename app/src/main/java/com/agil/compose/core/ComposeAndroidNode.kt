@@ -37,7 +37,21 @@ abstract class ComposeAndroidNode(modifier: Modifier) {
     open fun move(from: Int, to: Int, count: Int) {
         children.move(from, to, count)
         //todo
-        (view as LinearLayout)
+        if (view is LinearLayout) {
+            for (i in 0 until count) {
+                val child = (view as LinearLayout).getChildAt(from)
+                (view as LinearLayout).removeViewAt(from)
+                (view as LinearLayout).addView(child, to - i - 1)
+            }
+        } else if (view is ConstraintLayout) {
+            for (i in 0 until count) {
+                val child = (view as ConstraintLayout).getChildAt(from)
+                (view as ConstraintLayout).removeViewAt(from)
+                (view as ConstraintLayout).addView(child, to - i - 1)
+            }
+        } else {
+            throw UnsupportedOperationException()
+        }
     }
 
     open fun remove(index: Int, count: Int) {
