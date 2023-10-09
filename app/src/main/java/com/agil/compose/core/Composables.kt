@@ -79,18 +79,6 @@ fun Column(modifier: Modifier = Modifier(), content: @Composable () -> Unit) {
     )
 }
 
-fun runComposeAgil(content: @Composable () -> Unit) = runBlocking {
-    val frameClock = BroadcastFrameClock()
-    val recomposer = Recomposer(coroutineContext + frameClock)
-    val rootNode = Column(Modifier())
-    val composition = Composition(
-        applier = ComposeAndroidApplier(rootNode),
-        parent = recomposer
-    )
-    composition.setContent(content)
-    return@runBlocking rootNode.view
-}
-
 fun runComposeAndroid(content: @Composable () -> Unit): View {
     val frameClock = BroadcastFrameClock()
     val recomposer = Recomposer(frameClock)
