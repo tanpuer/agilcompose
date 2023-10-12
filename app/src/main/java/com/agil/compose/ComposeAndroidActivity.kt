@@ -23,19 +23,19 @@ class ComposeAndroidActivity : ComponentActivity() {
             runComposeAndroid {
                 var index by remember { mutableIntStateOf(1) }
                 Column(
-                    Modifier()
+                    modifier = Modifier()
                         .gravity(Gravity.CENTER_HORIZONTAL)
                         .fillMaxSize()
                 ) {
                     View(
-                        Modifier()
+                        modifier = Modifier()
                             .size(100, 100)
                             .backgroundColor("#ff0000")
                             .margin(20)
                     )
                     Text(
                         text = "Hello World",
-                        Modifier()
+                        modifier = Modifier()
                             .textSize(30)
                             .textColor("#00ff00")
                             .marginTop(20)
@@ -43,14 +43,14 @@ class ComposeAndroidActivity : ComponentActivity() {
                     )
                     Text(
                         text = "测试文本2",
-                        Modifier()
+                        modifier = Modifier()
                             .textSize(20)
                             .textColor("#0000ff")
                             .margin(20)
                     )
                     Image(
                         source = R.drawable.ic_launcher_foreground,
-                        Modifier()
+                        modifier = Modifier()
                             .size(400, 400)
                             .padding(20),
                         tintColor = when(index) {
@@ -69,26 +69,26 @@ class ComposeAndroidActivity : ComponentActivity() {
                         }
                     )
                     Row(
-                        Modifier()
+                        modifier = Modifier()
                             .gravity(Gravity.CENTER_VERTICAL)
                             .marginTop(50)
                     ) {
                         Text(
                             text = "Hello World",
-                            Modifier()
+                            modifier = Modifier()
                                 .textSize(30)
                                 .textColor("#00ff00")
                         )
                         Text(
                             text = "测试文本",
-                            Modifier()
+                            modifier = Modifier()
                                 .textSize(20)
                                 .textColor("#0000ff")
                                 .marginLeft(20)
                         )
                         Image(
                             source = R.mipmap.ic_launcher,
-                            Modifier()
+                            modifier = Modifier()
                                 .size(120, 120)
                                 .marginLeft(20)
                         )
