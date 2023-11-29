@@ -5,3 +5,5 @@
 可以自行定义任何Android的widgets，不需要转向Compose的View体系，目前已基于LinearLayout实现Row/Column；基础组件View/Image/Text。
 
 ![Image](./example.png)
+
+理论上可以接入其他任意UI框架，接了Agil，可以跑个Demo
